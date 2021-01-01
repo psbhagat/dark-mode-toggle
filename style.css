@@ -1,0 +1,100 @@
+:root {
+  --toggle-switch: #fff;
+  --toggle-switch-border: #aaa69d;
+  --background-color: #e2f5f2;
+  --slider-color: #84817a;
+  --text-color: #000;
+  --wishes-color: #0b0980; }
+
+[view-mode="dark"] {
+  --toggle-switch:#000;
+  --toggle-switch-border: #000;
+  --background-color: #2c2c54;
+  --text-color: #fff;
+  --wishes-color: #f70a0a; }
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0; }
+
+body {
+  background-color: var(--background-color);
+  transition: 4s;
+  font-family: 'Darker Grotesque', sans-serif; }
+
+.toggle-switch-main {
+  padding-top: 20px;
+  padding-right: 20px;
+  left: 43%;
+  position: absolute;
+  top: 20px;
+  transition: 4s;
+  color: var(--text-color); }
+
+.toggle-checkbox {
+  display: inline-block;
+  height: 34px;
+  width: 60px;
+  position: relative;
+  left: 33%;
+  top: 50px;
+  position: absolute; }
+
+.toggle-checkbox input {
+  display: none; }
+
+.toggle-slider {
+  cursor: pointer;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background-color: var(--toggle-switch);
+  border-radius: 30px;
+  border: 2px solid var(--toggle-switch-border); }
+
+.toggle-slider:before {
+  content: "";
+  position: absolute;
+  left: 5px;
+  right: 5px;
+  top: 5px;
+  bottom: 5px;
+  transition: 4s;
+  background-color: var(--slider-color);
+  width: 28px;
+  border-radius: 50%; }
+
+input:checked + .toggle-slider {
+  background-color: var(--toggle-switch); }
+
+input:checked + .toggle-slider:before {
+  transform: translateX(23px); }
+
+/** Main Style for light dark toggle ends here**/
+/** Below are other styles for the page elements*/
+.wishes {
+  border-radius: 10%;
+  position: absolute;
+  top: 30%;
+  left: 25%;
+  font-family: 'Bungee Outline', cursive;
+  font-size: 40px;
+  color: var(--wishes-color);
+  transition: 4s; }
+
+.wishes-animation {
+  animation-name: comeIntoFocus;
+  animation-duration: 4s;
+  animation-timing-function: ease; }
+
+@keyframes comeIntoFocus {
+  0% {
+    opacity: 0;
+    font-size: 10px;
+    left: 40%; }
+  100% {
+    opacity: 1;
+    font-size: 40px; } }
